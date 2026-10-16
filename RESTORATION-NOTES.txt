@@ -1,0 +1,60 @@
+Block Action 復刻ラボ — 試作版
+
+目的
+ユーザーが保存していた Action.swf を Ruffle 0.6.0 で実行し、失われたPHPバックエンドの代替をSites/D1で提供します。
+公式サービスでも原作者による移植でもありません。オリジナルSWFの権利表示・権利帰属は元の権利者に帰属します。再配布許諾は未確認です。
+
+使い方
+・PCのブラウザで開き、ステージを選択。ゲーム内のSPACEボタンで開始。
+・左右キーで移動、Spaceでジャンプ、Ctrlでダッシュ、上下キーではしご。
+・Create New Stageで編集。SAVEから投稿フォームを開き、submitで保存。
+・サイト側の一覧を更新して、対象ステージの「リンクをコピー」で共有。
+・編集・削除は元の方式の編集用パスワードを利用。パスワードはPBKDF2で保存。
+・サイト自体は所有者限定で展開。URLだけでは他人はアクセスできません。公開範囲の変更は別途必要です。
+
+実装
+元SWFはバイト単位で変更なし。PHPというURLを互換APIとして実装。
+ステージ840セル（30列×28行、列優先）、コメント、記録、カウンターをD1に保存。
+デモ2件は今回新規作成。当時の投稿ステージ、ランキング、コメントは復元していません。
+ステージ削除は論理削除。ランキング消去は元ゲーム相当の動作。
+右側の一覧は新しい100件まで。ゲーム内の一覧はページ送りに対応。
+
+検証
+Chromeで元画面、ステージ読込、ゲーム開始、プレイヤー描画、作成モードの表示を確認。
+ローカルD1で新規保存、840セルの往復、正誤パスワード、コメント保存・読込、ランキング、入力検証、保護された論理削除を検証。
+TypeScript検査、Workerビルド成功。
+ブラウザ操作での投稿完了、全ブロックの物理挙動、モバイル操作は未検証。
+WebMCPのlist_stagesは任意の補助機能。対応ブラウザ環境での実行検証は未完了。
+元のゲーム内URL表示は旧サイトのまま。共有には外側の「リンクをコピー」を使います。
+元のFlash UIには通信失敗時の復旧制約があり、外側にエラーを通知します。
+記録はクライアント申告であり、競技用の不正防止を保証しません。
+
+参考
+https://ruffle.rs/
+https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle
+Ruffleのライセンスは public/ruffle/LICENSE_MIT と LICENSE_APACHE。
+
+管理機能（追加）
+・PickUpボタンはSWFのsortType=6。管理人の指定フラグがあるステージのみ抽出。
+・editMapLogin.phpにはSWFでpickup=trueの応答分岐が残る。ピックアップ用管理パスワードをEdit欄で使用すると指定/解除を切り替える。
+・全ステージ編集とランキング消去は別々の管理パスワード。値は今回新規発行で、当時の値ではない。
+・管理編集では投稿者パスワードを保持。編集・ランキング・ピックアップの管理パスワードにステージ削除権限は付与していない。別途DELETE専用パスワードを追加。
+・管理用パスワードはSitesの秘密設定にPBKDF2ハッシュとして保存。値やハッシュをブラウザへ返さない。
+・既存ステージはpickup=0で移行。既存データを勝手に選定しない。
+・ローカルD1で指定/解除と絞り込み、権限の相互分離、管理編集後の投稿者パスワード維持、ランキング消去、デモ編集権限、削除の拒否を確認。
+
+削除専用管理パスワードを追加。任意のステージ（デモを含む）を論理削除できます。他の管理権限とは独立し、新規ステージの投稿パスワードとしての流用も拒否します。
+コメント表示調整: public/Action.swfは原本を維持。scripts/patch-comment-text.pyでDefineEditText ID 363のfontHeightを320→240、leadingを40→0に変更したAction-comments.swfを使用。ローカルRuffleで7件すべての本文と区切り線が表示されることを確認。
+
+現在のフォント描画: player.htmlでdeviceFontRenderer=canvasを指定し、端末のデバイスフォントを使用。オリジナルAction.swfに復帰。旧Action-comments.swfの文字縮小は使用しない。Windowsでランキング10位と元の16px・leading 2pxでコメント7件が収まることを確認。MS UI Gothicのない端末ではOSの代替フォントとなり見え方が異なる。
+
+文字基準位置補正: Action-aligned.swfを使用。scripts/patch-text-baselines.pyにより原本からステージ番号2箇所を下へ6px、PLAY/CLEAR/GAME OVERの数値を下へ2px、Comments件数を下へ1px移動。座標以外の非圧縮SWFビットが不変であることを検証。canvas描画、フォントサイズ・行間は維持。
+
+Good/Badの数字（ID 431/434）をそれぞれ下へ3px移動し、顔アイコンの中央に合わせた。
+URL表示: scripts/url-pcodeの2ファイルをFFDec -importScriptで原本Action.swfへ適用後、patch-text-baselines.pyを実行。旧ドメインのURLをhttps://block-action-revival.ooooiwocha.chatgpt.site/?stage=へ変更。URL文字列を下へ2px、文字サイズを14pxに変更。
+追加位置調整: URLは原本比で下へ3px（前版から+1px）、ステージ投稿日付は下へ3px。
+再調整: 投稿日付(ID 420)とGood数値(ID 431)を前版から1px上へ。両者の原本比は下へ2px。BadとURLは維持。
+
+Mobile font fallback: mobile-fonts.js maps SWF device font requests on Android to sans-serif, and on iOS to Hiragino (Japanese) / Helvetica Neue (Latin). Desktop rendering is unchanged. Ruffle 0.6 OffscreenCanvas font atlas layout metrics are normalized to Windows Chrome measurements at 64px (MS UI Gothic 55/9, Century Gothic 62/14, Arial 58/14, Tahoma 64/13); real glyph bounds and advances remain native. No downloadable fonts. Browser checks passed for both profiles, desktop bypass, ranking row 10, comment row 7 and comment form; real Android/iOS appearance still requires device confirmation.
+
+Japanese input repair: the original Halo TextInput/TextArea inherited _sans; Japanese characters were stored but invisible while editing. scripts/input-pcode/__Packages/mx/skins/halo/Defaults.pcode sets fontFamily=MS UI Gothic only for TextInput/TextArea, retaining existing mobile device fallback. Import this pcode AFTER URL and baseline patches when rebuilding Action-aligned.swf; only the Defaults DoInitAction tag changes. public/text-input.js preserves native IME composition, commits finalized input once, and routes paste through native input. Tested local Japanese paste + simulated composition retention/commit and exact server round-trip; no production test comments were submitted.

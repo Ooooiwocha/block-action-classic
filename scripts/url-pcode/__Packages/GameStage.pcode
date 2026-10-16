@@ -1,0 +1,1257 @@
+ConstantPool "_global", "GameStage", "scx", "xsize", "square_size", "scy", "ysize", "mapArr", "Array", "player", "Player", "attachMovie", "gotoAndStop", "_width", "_height", "makeStage", "MovieClip", "prototype", "clearStage", "objArr", "length", "splice", "deleteBlock", "action_id", "LoadVars", "game", "edit", "POST", "result_lv1", "loadMapData.php", "sendAndLoad", "mapdata", "gameStage", "typeNo", "name", "comment", "title", "password", "valid", "result_lv2", "saveMapData.php", "onLoad", "false", "gameStart", "underConstruction", "stage_title", "text", "creator_name", "stage_name", "_visible", "makeBlock", "stageData", "dead_num", "dn", "clear_num", "cn", "good", "bad", "pn", "retn", "play_count", "create", "", "create_date", "ranking", "rn", "  ", "rt", " loop (", ")\n", " ", "-----------------\n", "url_box", "https://block-action-revival.ooooiwocha.chatgpt.site/?stage=", "stageComment", "loading", "error", "true", "changeToPlayMode", "connectingWindow", "deletePopUp", "loadMapData", "gameSet", "timer", "gravity", "Math", "abs", "init", "px", "py", "_x", "_y", "run", "orderYASC", "sort", "Date", "stime", "getTime", "_parent", "changeShowMode", "removeMovieClip", "blockNo", "block", "Block", "ox", "oy", "no", "swapDepths", "show_block", "call", "push", "changePlayMode", "multiplize", "floor", "goal", "dead", "getNextHighestDepth", "p_dead", "P_dead", "gameOver", "addGameOver", "initted", "resistX", "resistY", "ICE_RESIST", "moveBlockSpeed", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "GameStage"
+GetMember
+Not
+Not
+If loc1881
+Push "_global"
+GetVariable
+Push "GameStage"
+DefineFunction2 "", 0, 5, false, false, false, true, true, false, false, true, false {
+Push 0.0, register2, undefined
+CallMethod
+Pop
+Push register1, "scx", register1, "xsize"
+GetMember
+Push register1, "square_size"
+GetMember
+Multiply
+SetMember
+Push register1, "scy", register1, "ysize"
+GetMember
+Push register1, "square_size"
+GetMember
+Multiply
+SetMember
+Push register1, "mapArr", register1, "xsize"
+GetMember
+Push 1, "Array"
+NewObject
+SetMember
+Push 0.0
+StoreRegister 4
+Pop
+loc04bf:Push register4, register1, "xsize"
+GetMember
+Less2
+Not
+If loc0549
+Push register1, "mapArr"
+GetMember
+Push register4, register1, "ysize"
+GetMember
+Push 1, "Array"
+NewObject
+SetMember
+Push 0.0
+StoreRegister 3
+Pop
+loc04ff:Push register3, register1, "ysize"
+GetMember
+Less2
+Not
+If loc0539
+Push register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3, -1
+SetMember
+Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc04ff
+loc0539:Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc04bf
+loc0549:Push register1, "player", 0.0, "player", "Player", 3, register1, "attachMovie"
+CallMethod
+SetMember
+Push 2, 1, register1, "player"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push register1, "player"
+GetMember
+Push "_width", 16
+SetMember
+Push register1, "player"
+GetMember
+Push "_height", 16
+SetMember
+Push 1, 1, register1, "player"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push 0.0, register1, "makeStage"
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "_global"
+GetVariable
+Push "GameStage"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "clearStage"
+DefineFunction2 "", 0, 5, false, false, true, false, true, false, false, true, false {
+Push 0.0
+StoreRegister 4
+Pop
+loc061a:Push register4, register1, "objArr"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc065c
+Push 1, register4, 2, register1, "objArr"
+GetMember
+Push "splice"
+CallMethod
+Pop
+Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc061a
+loc065c:Push 0.0
+StoreRegister 3
+Pop
+loc066d:Push register3, register1, "xsize"
+GetMember
+Less2
+Not
+If loc06eb
+Push 0.0
+StoreRegister 2
+Pop
+loc068f:Push register2, register1, "ysize"
+GetMember
+Less2
+Not
+If loc06db
+Push register2, register3, 2, register1, "deleteBlock"
+CallMethod
+Pop
+Push register1, "mapArr"
+GetMember
+Push register3
+GetMember
+Push register2, -1
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc068f
+loc06db:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc066d
+}
+loc06eb:SetMember
+Push register2, "makeStage"
+DefineFunction2 "", 0, 9, false, true, true, false, true, false, false, true, false {
+DefineFunction2 "loadMapData", 0, 3, false, true, true, false, true, false, true, false, false {
+Push register1, "action_id"
+GetMember
+Push 0.0
+Less2
+Push register1, "action_id"
+GetMember
+Push undefined
+Equals2
+Or
+Not
+If loc0742
+Push undefined
+Return
+loc0742:Push 0.0, register1, "clearStage"
+CallMethod
+Pop
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push register1, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc079b
+Push register2, "edit", 1
+SetMember
+Jump loc07ac
+loc079b:Push register2, "edit", 0.0
+SetMember
+loc07ac:Push "POST", "result_lv1"
+GetVariable
+Push "loadMapData.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+DefineFunction2 "submitMapData", 0, 5, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 4
+Pop
+Push register4, "mapdata", 0.0, "Array"
+NewObject
+SetMember
+Push 0.0
+StoreRegister 3
+Pop
+loc0815:Push register3, 30
+Less2
+Not
+If loc0908
+Push register4, "mapdata"
+GetMember
+Push register3, 0.0, "Array"
+NewObject
+SetMember
+Push 0.0
+StoreRegister 2
+Pop
+loc0851:Push register2, 28
+Less2
+Not
+If loc08f8
+Push register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "mapArr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "typeNo"
+GetMember
+Push undefined
+Equals2
+Not
+If loc08b1
+Push register4, "mapdata"
+GetMember
+Push register3
+GetMember
+Push register2, -1
+SetMember
+Jump loc08e8
+loc08b1:Push register4, "mapdata"
+GetMember
+Push register3
+GetMember
+Push register2, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "mapArr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "typeNo"
+GetMember
+SetMember
+loc08e8:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0851
+loc08f8:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc0815
+loc0908:Push register4, "name", register1, "name"
+GetMember
+SetMember
+Push register4, "comment", register1, "comment"
+GetMember
+SetMember
+Push register4, "title", register1, "title"
+GetMember
+SetMember
+Push register4, "password", register1, "password"
+GetMember
+SetMember
+Push register4, "valid", register1, "valid"
+GetMember
+SetMember
+Push register4, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push "POST", "result_lv2"
+GetVariable
+Push "saveMapData.php", 3, register4, "sendAndLoad"
+CallMethod
+Pop
+}
+Push "result_lv1", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv1"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 8, false, true, true, false, true, false, false, true, false {
+Push 0.0
+StoreRegister 3
+Pop
+Push register2, "title", register1, "title"
+GetMember
+SetMember
+Push register2, "name", register1, "name"
+GetMember
+SetMember
+Push register2, "comment", register1, "comment"
+GetMember
+SetMember
+Push register1, "valid"
+GetMember
+Push "false"
+Equals2
+Not
+If loc0aa1
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "stage_title"
+GetMember
+Push "text", register2, "title"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "creator_name"
+GetMember
+Push "text", register2, "name"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "comment"
+GetMember
+Push "text", register2, "comment"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "stage_name"
+GetMember
+Push "text", register2, "action_id"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "_visible", true
+SetMember
+Push register2, "valid", false
+SetMember
+Jump loc0f17
+loc0aa1:Push register2, "valid", true
+SetMember
+Push 0.0
+StoreRegister 5
+Pop
+loc0abc:Push register5, 30
+Less2
+Not
+If loc0b80
+Push 0.0
+StoreRegister 4
+Pop
+loc0ade:Push register4, 28
+Less2
+Not
+If loc0b70
+Push register1, "mapArr"
+GetMember
+Push register5
+GetMember
+Push register4, register1, register3
+GetMember
+SetMember
+Push register1, register3
+GetMember
+Push -1
+Equals2
+Not
+Push register1, register3
+GetMember
+Push undefined
+Equals2
+Not
+And
+Not
+If loc0b55
+Push register4, register5, register1, register3
+GetMember
+Push 3, register2, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "makeBlock"
+CallMethod
+Pop
+loc0b55:Push register3
+Increment
+StoreRegister 3
+Pop
+Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc0ade
+loc0b70:Push register5
+Increment
+StoreRegister 5
+Pop
+Jump loc0abc
+loc0b80:Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "dead_num"
+GetMember
+Push "text", register1, "dn"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "clear_num"
+GetMember
+Push "text", register1, "cn"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "good"
+GetMember
+Push "text", register1, "good"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "bad"
+GetMember
+Push "text", register1, "bad"
+GetMember
+SetMember
+Push 0.0
+StoreRegister 7
+Pop
+Push register1, "pn"
+GetMember
+Push 0.0
+Greater
+Not
+If loc0c51
+Push register7, register1, "pn"
+GetMember
+ToInteger
+Add2
+StoreRegister 7
+Pop
+loc0c51:Push register1, "retn"
+GetMember
+Push 0.0
+Greater
+Not
+If loc0c7d
+Push register7, register1, "retn"
+GetMember
+ToInteger
+Add2
+StoreRegister 7
+Pop
+loc0c7d:Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "play_count"
+GetMember
+Push "text", register7
+SetMember
+Push register1, "create"
+GetMember
+Push ""
+Equals2
+Not
+Not
+If loc0cd9
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "create_date"
+GetMember
+Push "text", register1, "create"
+GetMember
+SetMember
+loc0cd9:Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "ranking"
+GetMember
+Push "text", 0.0
+SetMember
+Push ""
+StoreRegister 6
+Pop
+Push 0.0
+StoreRegister 3
+Pop
+loc0d1d:Push register3, 10
+Less2
+Not
+If loc0de5
+Push register1, "rn", register3
+Add2
+GetMember
+Not
+If loc0d81
+Push register6, register3, 1
+Add2
+Push "  "
+Add2
+Push register1, "rt", register3
+Add2
+GetMember
+Add2
+Push " loop ("
+Add2
+Push register1, "rn", register3
+Add2
+GetMember
+Add2
+Push ")\n"
+Add2
+Add2
+StoreRegister 6
+Pop
+Jump loc0dd5
+loc0d81:Push register3, 9
+Greater
+Not
+If loc0db6
+Push register6, register3, 1
+Add2
+Push " "
+Add2
+Push "-----------------\n"
+Add2
+Add2
+StoreRegister 6
+Pop
+Jump loc0dd5
+loc0db6:Push register6, register3, 1
+Add2
+Push "  "
+Add2
+Push "-----------------\n"
+Add2
+Add2
+StoreRegister 6
+Pop
+loc0dd5:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc0d1d
+loc0de5:Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "ranking"
+GetMember
+Push "text", register6
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "stage_name"
+GetMember
+Push "text", register2, "action_id"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "stage_title"
+GetMember
+Push "text", register2, "title"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "creator_name"
+GetMember
+Push "text", register2, "name"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "comment"
+GetMember
+Push "text", register2, "comment"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "url_box"
+GetMember
+Push "text", "https://block-action-revival.ooooiwocha.chatgpt.site/?stage=", register2, "action_id"
+GetMember
+Add2
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "_visible", true
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "_visible", false
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "_visible", false
+SetMember
+loc0f17:Push register2, "loading", false
+SetMember
+}
+SetMember
+Push "result_lv2", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv2"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "error"
+GetMember
+Push "true"
+Equals2
+Not
+Not
+If loc0f5f
+}
+loc0f5f:SetMember
+Push "result_lv2", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv2"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push 0.0, register1, "changeToPlayMode"
+CallMethod
+Pop
+Push 0.0, register1, "connectingWindow"
+GetMember
+Push "deletePopUp"
+CallMethod
+Pop
+}
+SetMember
+Push 0.0, "loadMapData"
+CallFunction
+Pop
+}
+SetMember
+Push register2, "gameSet"
+DefineFunction2 "", 0, 6, false, true, true, false, true, false, false, true, false {
+Push register2, "game"
+GetMember
+Push "timer", 0.0
+SetMember
+Push register1, "player"
+GetMember
+Push "_visible", true
+SetMember
+Push register1, "gravity", register1, "gravity"
+GetMember
+Push 1, "Math"
+GetVariable
+Push "abs"
+CallMethod
+SetMember
+Push 0.0, register1, "player"
+GetMember
+Push "init"
+CallMethod
+Pop
+Push register1, "player"
+GetMember
+Push "px", 0.0
+SetMember
+Push register1, "player"
+GetMember
+Push "py", 16
+SetMember
+Push register1, "player"
+GetMember
+Push "_x", register1, "player"
+GetMember
+Push "px"
+GetMember
+SetMember
+Push register1, "player"
+GetMember
+Push "_y", register1, "player"
+GetMember
+Push "py"
+GetMember
+SetMember
+Push 0.0
+StoreRegister 4
+Pop
+loc10a0:Push register4, register1, "xsize"
+GetMember
+Less2
+Not
+If loc11a7
+Push 0.0
+StoreRegister 3
+Pop
+loc10c2:Push register3, register1, "ysize"
+GetMember
+Less2
+Not
+If loc1197
+Push 0.0, register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Push "init"
+CallMethod
+Pop
+Push register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Push "typeNo"
+GetMember
+Push 6
+Equals2
+Not
+If loc1187
+Push register1, "player"
+GetMember
+Push "px", register4, register1, "square_size"
+GetMember
+Multiply
+SetMember
+Push register1, "player"
+GetMember
+Push "py", register3, 1
+Add2
+Push register1, "square_size"
+GetMember
+Multiply
+SetMember
+Push register1, "player"
+GetMember
+Push "_x", register1, "player"
+GetMember
+Push "px"
+GetMember
+SetMember
+Push register1, "player"
+GetMember
+Push "_y", register1, "player"
+GetMember
+Push "py"
+GetMember
+SetMember
+loc1187:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc10c2
+loc1197:Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc10a0
+loc11a7:Push register1, "run", false
+SetMember
+Push 1, 1, register1, "player"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push register1, "orderYASC"
+GetMember
+Push 1, register1, "objArr"
+GetMember
+Push "sort"
+CallMethod
+Pop
+Push 0.0, "Date"
+NewObject
+StoreRegister 5
+Pop
+Push register1, "stime", 0.0, register5, "getTime"
+CallMethod
+SetMember
+Push register1, "_parent"
+GetMember
+Push "edit"
+GetMember
+Not
+Not
+If loc1235
+Push true, 1, register1, "changeShowMode"
+CallMethod
+Pop
+}
+loc1235:SetMember
+Push register2, "deleteBlock"
+DefineFunction2 "", 2, 5, false, false, true, false, true, false, false, true, false, 4, "x", 3, "y" {
+Push register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Not
+If loc130d
+Push 0.0
+StoreRegister 2
+Pop
+loc1279:Push register2, register1, "objArr"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc12e9
+Push register1, "objArr"
+GetMember
+Push register2
+GetMember
+Push register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Equals2
+Not
+If loc12d9
+Push 1, register2, 2, register1, "objArr"
+GetMember
+Push "splice"
+CallMethod
+Pop
+Jump loc12e9
+loc12d9:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1279
+loc12e9:Push 0.0, register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Push "removeMovieClip"
+CallMethod
+Pop
+}
+loc130d:SetMember
+Push register2, "makeBlock"
+DefineFunction2 "", 3, 6, false, false, true, false, true, false, false, true, false, 5, "typeNo", 4, "x", 3, "y" {
+Push register1, "blockNo"
+GetMember
+Push "block", register1, "blockNo"
+GetMember
+Add2
+Push "Block", register5
+Add2
+Push 3, register1, "attachMovie"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, "ox", register4, register1, "square_size"
+GetMember
+Multiply
+SetMember
+Push register2, "oy", register3, 1
+Add2
+Push register1, "square_size"
+GetMember
+Multiply
+SetMember
+Push register2, "no", register1, "blockNo"
+GetMember
+SetMember
+Push 0.0, register2, "init"
+CallMethod
+Pop
+Push register1, "player"
+GetMember
+Push 1, register2, "swapDepths"
+CallMethod
+Pop
+Push register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3, register2
+SetMember
+Push register1, "show_block"
+GetMember
+Not
+If loc1407
+Push 2, 1, register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc142c
+loc1407:Push 1, 1, register1, "mapArr"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc142c:Push register2, "call"
+GetMember
+Not
+If loc1450
+Push register2, 1, register1, "objArr"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc1450:Push register1, "blockNo", register1, "blockNo"
+GetMember
+Increment
+SetMember
+}
+SetMember
+Push register2, "changePlayMode"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "b" {
+Push register1, "run", register2
+SetMember
+Push 2, 1, register1, "player"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "changeShowMode"
+DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 5, "b" {
+Push 0.0
+StoreRegister 4
+Pop
+Push register1, "show_block", register5
+SetMember
+Push register5
+Not
+If loc14e5
+Push 2
+StoreRegister 4
+Pop
+Jump loc14f2
+loc14e5:Push 1
+StoreRegister 4
+Pop
+loc14f2:Push 0.0
+StoreRegister 3
+Pop
+loc1503:Push register3, register1, "xsize"
+GetMember
+Less2
+Not
+If loc1578
+Push 0.0
+StoreRegister 2
+Pop
+loc1525:Push register2, register1, "ysize"
+GetMember
+Less2
+Not
+If loc1568
+Push register4, 1, register1, "mapArr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1525
+loc1568:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc1503
+}
+loc1578:SetMember
+Push register2, "orderYASC"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 2, "a", 1, "b" {
+Push register2, "py"
+GetMember
+Push register1, "py"
+GetMember
+Less2
+Not
+If loc15b1
+Push -1
+Return
+loc15b1:Push register2, "py"
+GetMember
+Push register1, "py"
+GetMember
+Greater
+Not
+If loc15d1
+Push 1
+Return
+loc15d1:Push 0.0
+Return
+}
+SetMember
+Push register2, "multiplize"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 2, "s", 1, "m" {
+Push register2, register1
+Divide
+Push 1, "Math"
+GetVariable
+Push "floor"
+CallMethod
+Push register1
+Multiply
+Return
+}
+SetMember
+Push register2, "goal"
+DefineFunction2 "", 2, 3, false, true, true, false, true, false, false, true, false, 0, "x", 0, "y" {
+Push register1, "run", false
+SetMember
+Push register2, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc1671
+Push 0.0, register2, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "gameSet"
+CallMethod
+Pop
+Jump loc168a
+loc1671:Push 6, 1, register2, "game"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+}
+loc168a:SetMember
+Push register2, "dead"
+DefineFunction2 "", 2, 5, false, false, true, false, true, false, false, true, false, 4, "x", 3, "y" {
+Push register1, "player"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "run", false
+SetMember
+Push 0.0, register1, "getNextHighestDepth"
+CallMethod
+Push "p_dead", "P_dead", 3, register1, "attachMovie"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, "_x", register4
+SetMember
+Push register2, "_y", register3
+SetMember
+}
+SetMember
+Push register2, "gameOver"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "player"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "run", false
+SetMember
+Push register2, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc1750
+Push 0.0, register1, "gameSet"
+CallMethod
+Pop
+Jump loc177b
+loc1750:Push 0.0, register2, "addGameOver"
+CallMethod
+Pop
+Push 5, 1, register2, "game"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+}
+loc177b:SetMember
+Push register2, "initted", false
+SetMember
+Push register2, "blockNo", 1
+SetMember
+Push register2, "gravity", 8
+SetMember
+Push register2, "square_size", 16
+SetMember
+Push register2, "resistX", 1.5
+SetMember
+Push register2, "resistY", 9
+SetMember
+Push register2, "ICE_RESIST", 1.05
+SetMember
+Push register2, "moveBlockSpeed", 2
+SetMember
+Push register2, "stime", 0.0
+SetMember
+Push register2, "show_block", false
+SetMember
+Push register2, "run", false
+SetMember
+Push register2, "objArr", 0.0, "Array"
+NewObject
+SetMember
+Push register2, "xsize", 30
+SetMember
+Push register2, "ysize", 28
+SetMember
+Push register2, "scx", 0.0
+SetMember
+Push register2, "scy", 0.0
+SetMember
+Push 1, null, "_global"
+GetVariable
+Push "GameStage"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc1881:Pop

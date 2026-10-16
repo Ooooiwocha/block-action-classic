@@ -1,0 +1,1 @@
+ALTER TABLE `stages` ADD `pickup` integer DEFAULT 0 NOT NULL;

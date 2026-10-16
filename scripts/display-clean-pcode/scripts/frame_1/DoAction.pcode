@@ -1,0 +1,1702 @@
+ConstantPool "LoadVars", "action_id", "POST", "result_lv", "addPlayCount.php", "sendAndLoad", "game", "edit", "onLoad", "addPlayCount", "addGameOverCount.php", "dead", "addGameOverCount", "addRetryCount.php", "addRetryCount", "time", "timer", "result_lv1", "checkTimeAttack.php", "rankingAccept", "name", "secure", "result_lv2", "saveTimeAttack.php", "ranking", "checkRankingWindow", "title", "Rank In!", "mx", "containers", "Window", "managers", "PopUpManager", "createPopUp", "setSize", "contentPath", "checkRanking", "move", "rank", "wait", "connectingWindow", "deletePopUp", "addSuicideCount.php", "addSuicideCount", "retryConnection", "gameStage", "gameSet", "fade", "gotoAndStop", "loading", "gotoAndPlay", "show_stage_count", "stageList", "btn_selected", "stageButtonList", "sort_btn1", "sort_btn2", "sort_btn3", "sort_btn4", "sort_btn6", "sort_btn0", "sortType", "snum", "cPage", "makeStageSelectList", "count", "show_stage_num", "stage_id", "text", "loadActionList.php", "length", "removeMovieClip", "totalCount", "total", "totalPage", "Math", "ceil", "id", "ssButton", "TaggleButton", "attachMovie", "no", "text1", "No ", "_x", "_y", "total_item", "Total ", " Stages", "bar", "page", "/", "loadActionList", "clearStage", "gameStart", "stageData", "clearData", "comment_snum", "loadCommentListHeader.php", "commentTotalCount", "ReadComments", "(", ")", "loadCommentListHeader", "loadCommentList.php", "commentPage", "show_comment_num", "show_comment_count", "", "----------------------------------------------------------\n", "                                         no comment\n", "create", "name:", "  ", "\n", "comment", "stageComment", "comments", "commentTotalPage", " Comments", "pageNo", " / ", "loadCommentList", "recommended", "time2", "_visible", "underConstruction", "makeStage", "loadCommentHeader", "createBtn", "label", "Create New Stage", "edit_panel", "stop", "edit_login", "changeShowMode", "player", "run", "Back To Play", "password", "valid", "first_id", "pressed", "point", "ranking_name", "ranking_time", "dead_num", "clear_num", "selectedEvaluate", "load", "onEnterFrame", "_root", "start_id", "this", "Array", "pageUpdate", "init", "loadMap", "tx", "_xmouse", "square_size", "floor", "ty", "_ymouse", "deleteBlock", "palleteNo", "xsize", "ysize", "makeBlock", "show_button", "play_button"
+DefineFunction2 "addPlayCount", 0, 3, false, true, true, false, true, false, true, false, false {
+DefineFunction2 "addPlayCount", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push "POST", "result_lv"
+GetVariable
+Push "addPlayCount.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push register1, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc0787
+Push undefined
+Return
+loc0787:Push "result_lv", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv"
+GetVariable
+Push "onLoad"
+DefineFunction "", 0 {
+}
+SetMember
+Push 0.0, "addPlayCount"
+CallFunction
+Pop
+}
+DefineFunction2 "addGameOver", 0, 3, false, true, true, false, true, false, true, false, false {
+DefineFunction2 "addGameOverCount", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push "POST", "result_lv"
+GetVariable
+Push "addGameOverCount.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push register1, "dead"
+GetMember
+Not
+If loc083a
+Push undefined
+Return
+loc083a:Push register1, "dead", true
+SetMember
+Push register1, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc085d
+Push undefined
+Return
+loc085d:Push "result_lv", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv"
+GetVariable
+Push "onLoad"
+DefineFunction "", 0 {
+}
+SetMember
+Push 0.0, "addGameOverCount"
+CallFunction
+Pop
+}
+DefineFunction2 "retryConnection", 0, 3, false, true, true, false, true, false, true, false, false {
+DefineFunction2 "addRetryCount", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push "POST", "result_lv"
+GetVariable
+Push "addRetryCount.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push register1, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc0917
+Push undefined
+Return
+loc0917:Push "result_lv", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv"
+GetVariable
+Push "onLoad"
+DefineFunction "", 0 {
+}
+SetMember
+Push 0.0, "addRetryCount"
+CallFunction
+Pop
+}
+DefineFunction2 "clearConnection", 0, 4, false, true, true, false, true, false, false, true, false {
+DefineFunction2 "checkRanking", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "time", register1, "game"
+GetMember
+Push "timer"
+GetMember
+SetMember
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push "POST", "result_lv1"
+GetVariable
+Push "checkTimeAttack.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+DefineFunction2 "setRanking", 0, 3, false, true, true, false, true, false, true, false, false {
+Push register1, "rankingAccept"
+GetMember
+Not
+Not
+If loc09f3
+Push undefined
+Return
+loc09f3:Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "name", register1, "name"
+GetMember
+SetMember
+Push register2, "time", register1, "game"
+GetMember
+Push "timer"
+GetMember
+SetMember
+Push register2, "secure", register1, "game"
+GetMember
+Push "timer"
+GetMember
+ToInteger
+Push register1, "action_id"
+GetMember
+ToInteger
+Push 24
+Add2
+Multiply
+Push register1, "action_id"
+GetMember
+ToInteger
+Add2
+Push 3
+Multiply
+Push 32
+Add2
+SetMember
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push "POST", "result_lv2"
+GetVariable
+Push "saveTimeAttack.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push register2, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc0aa8
+Push undefined
+Return
+loc0aa8:Push "result_lv1", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv2", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv1"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "ranking"
+GetMember
+Push 0.0
+Greater
+Not
+If loc0b99
+Push "checkRankingWindow"
+GetVariable
+Push "title", "Rank In!"
+SetMember
+Push "checkRankingWindow", true, "mx"
+GetVariable
+Push "containers"
+GetMember
+Push "Window"
+GetMember
+Push register2, 3, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "PopUpManager"
+GetMember
+Push "createPopUp"
+CallMethod
+DefineLocal
+Push 170, 150, 2, "checkRankingWindow"
+GetVariable
+Push "setSize"
+CallMethod
+Pop
+Push "checkRankingWindow"
+GetVariable
+Push "contentPath", "checkRanking"
+SetMember
+Push 260, 320, 2, "checkRankingWindow"
+GetVariable
+Push "move"
+CallMethod
+Pop
+Push register2, "rank", register1, "ranking"
+GetMember
+SetMember
+Jump loc0ba3
+loc0b99:Push register2, "wait", false
+SetMember
+}
+loc0ba3:SetMember
+Push "result_lv2"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push 0.0, register1, "connectingWindow"
+GetMember
+Push "deletePopUp"
+CallMethod
+Pop
+Push register1, "wait", false
+SetMember
+}
+SetMember
+Push 0.0, "checkRanking"
+CallFunction
+Pop
+}
+DefineFunction2 "suicideConnection", 0, 3, false, true, true, false, true, false, true, false, false {
+DefineFunction2 "addSuicideCount", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push "POST", "result_lv"
+GetVariable
+Push "addSuicideCount.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push register1, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc0c75
+Push undefined
+Return
+loc0c75:Push "result_lv", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv"
+GetVariable
+Push "onLoad"
+DefineFunction "", 0 {
+}
+SetMember
+Push 0.0, "addSuicideCount"
+CallFunction
+Pop
+}
+DefineFunction2 "Retry", 0, 2, false, true, true, false, true, false, true, false, false {
+Push 0.0, register1, "retryConnection"
+CallMethod
+Pop
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "gameSet"
+CallMethod
+Pop
+Push 1, 1, register1, "game"
+GetMember
+Push "fade"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push 2, 1, register1, "game"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+}
+DefineFunction2 "gameStart", 0, 2, false, true, true, false, true, false, true, false, false {
+Push register1, "loading"
+GetMember
+Not
+If loc0d4a
+Push undefined
+Return
+loc0d4a:Push register1, "action_id"
+GetMember
+Push 0.0
+Less2
+Not
+If loc0d6a
+Push undefined
+Return
+loc0d6a:Push register1, "rankingAccept", true
+SetMember
+Push 0.0, register1, "addPlayCount"
+CallMethod
+Pop
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "gameSet"
+CallMethod
+Pop
+Push 2, 1, register1, "game"
+GetMember
+Push "fade"
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+Push 2, 1, register1, "game"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+}
+DefineFunction2 "ResetButtons1", 1, 3, false, false, true, false, true, false, true, false, false, 2, "no" {
+Push 0.0
+StoreRegister 1
+Pop
+loc0e09:Push register1, "show_stage_count"
+GetVariable
+Less2
+Not
+If loc0e6c
+Push register1, register2
+Equals2
+Not
+If loc0e2b
+Jump loc0e5c
+loc0e2b:Push "stageList"
+GetVariable
+Push register1
+GetMember
+Push "btn_selected", false
+SetMember
+Push 1, 1, "stageList"
+GetVariable
+Push register1
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc0e5c:Push register1
+Increment
+StoreRegister 1
+Pop
+Jump loc0e09
+}
+loc0e6c:DefineFunction2 "ResetButtons2", 1, 3, false, false, true, false, true, false, true, false, false, 2, "no" {
+Push 0.0
+StoreRegister 1
+Pop
+loc0e99:Push register1, "show_stage_count"
+GetVariable
+Less2
+Not
+If loc0f01
+Push register1, register2
+Equals2
+Not
+If loc0ebb
+Jump loc0ef1
+loc0ebb:Push "stageList"
+GetVariable
+Push register1
+GetMember
+Push "btn_selected"
+GetMember
+Not
+Not
+If loc0ef1
+Push 1, 1, "stageList"
+GetVariable
+Push register1
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc0ef1:Push register1
+Increment
+StoreRegister 1
+Pop
+Jump loc0e99
+}
+loc0f01:DefineFunction2 "ResetSortButtons", 1, 3, false, true, true, false, true, false, true, false, false, 2, "no" {
+Push register2, 1
+Equals2
+Not
+Not
+If loc0f56
+Push 1, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn1"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc0f75
+loc0f56:Push 3, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn1"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc0f75:Push register2, 2
+Equals2
+Not
+Not
+If loc0fab
+Push 1, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn2"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc0fca
+loc0fab:Push 3, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn2"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc0fca:Push register2, 3
+Equals2
+Not
+Not
+If loc1000
+Push 1, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn3"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc101f
+loc1000:Push 3, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn3"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc101f:Push register2, 4
+Equals2
+Not
+Not
+If loc1055
+Push 1, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn4"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc1074
+loc1055:Push 3, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn4"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc1074:Push register2, 6
+Equals2
+Not
+Not
+If loc10aa
+Push 1, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn6"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc10c9
+loc10aa:Push 3, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn6"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc10c9:Push register2, 0.0
+Equals2
+Not
+Not
+If loc1103
+Push 1, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn0"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc1122
+loc1103:Push 3, 1, register1, "stageButtonList"
+GetMember
+Push "sort_btn0"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc1122:Push register2, 8
+Equals2
+Push register2, 7
+Equals2
+Or
+Push register1, "sortType"
+GetMember
+Push register2
+Equals2
+Not
+Or
+Not
+If loc118d
+Push register1, "sortType", register2
+SetMember
+Push register1, "snum", 0.0
+SetMember
+Push register1, "cPage", 0.0
+SetMember
+Push 0.0, register1, "makeStageSelectList"
+CallMethod
+Pop
+}
+loc118d:DefineFunction2 "makeStageSelectList", 0, 7, false, true, true, false, true, false, false, true, false {
+DefineFunction2 "loadActionList", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "count", register1, "show_stage_num"
+GetMember
+SetMember
+Push register2, "snum", register1, "snum"
+GetMember
+SetMember
+Push register2, "sortType", register1, "sortType"
+GetMember
+SetMember
+Push register2, "sortType"
+GetMember
+Push 5
+Equals2
+Not
+If loc1223
+Push register2, "name", register1, "name"
+GetMember
+SetMember
+loc1223:Push register2, "sortType"
+GetMember
+Push 7
+Equals2
+Not
+If loc1253
+Push register2, "stage_id", register1, "stageButtonList"
+GetMember
+Push "stage_id"
+GetMember
+Push "text"
+GetMember
+SetMember
+loc1253:Push register2, "sortType"
+GetMember
+Push 8
+Equals2
+Not
+If loc1283
+Push register2, "name", register1, "stageButtonList"
+GetMember
+Push "name"
+GetMember
+Push "text"
+GetMember
+SetMember
+loc1283:Push "POST", "result_lv"
+GetVariable
+Push "loadActionList.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push register2, "loading", true
+SetMember
+Push "result_lv", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 6, false, true, true, false, true, false, false, true, false {
+Push 0.0
+StoreRegister 3
+Pop
+loc12de:Push register3, "stageList"
+GetVariable
+Push "length"
+GetMember
+Less2
+Not
+If loc1321
+Push 0.0, register2, "stageList"
+GetMember
+Push register3
+GetMember
+Push "removeMovieClip"
+CallMethod
+Pop
+Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc12de
+loc1321:Push register1, "count"
+GetMember
+StoreRegister 5
+Pop
+Push register2, "totalCount", register1, "total"
+GetMember
+SetMember
+Push register2, "totalPage", register2, "totalCount"
+GetMember
+Push register2, "show_stage_num"
+GetMember
+Divide
+Push 1, "Math"
+GetVariable
+Push "ceil"
+CallMethod
+SetMember
+Push register2, "show_stage_count", register5
+SetMember
+Push -1
+StoreRegister 4
+Pop
+Push 0.0
+StoreRegister 3
+Pop
+loc138a:Push register3, register5
+Less2
+Not
+If loc1486
+Push register1, "id", register3
+Add2
+GetMember
+StoreRegister 4
+Pop
+Push register2, "stageList"
+GetMember
+Push register3, register3, "ssButton", register3
+Add2
+Push "TaggleButton", 3, register2, "stageButtonList"
+GetMember
+Push "attachMovie"
+CallMethod
+SetMember
+Push register2, "stageList"
+GetMember
+Push register3
+GetMember
+Push "no", register3
+SetMember
+Push register2, "stageList"
+GetMember
+Push register3
+GetMember
+Push "action_id", register4
+SetMember
+Push register2, "stageList"
+GetMember
+Push register3
+GetMember
+Push "text1"
+GetMember
+Push "text", "No ", register2, "stageList"
+GetMember
+Push register3
+GetMember
+Push "action_id"
+GetMember
+Add2
+SetMember
+Push register2, "stageList"
+GetMember
+Push register3
+GetMember
+Push "_x", 0.0
+SetMember
+Push register2, "stageList"
+GetMember
+Push register3
+GetMember
+Push "_y", 31.95, register3
+Multiply
+Push 31.5
+Add2
+SetMember
+Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc138a
+loc1486:Push register2, "stageButtonList"
+GetMember
+Push "total_item"
+GetMember
+Push "text", "Total ", register2, "totalCount"
+GetMember
+Add2
+Push " Stages"
+Add2
+SetMember
+Push register2, "stageButtonList"
+GetMember
+Push "bar"
+GetMember
+Push "page"
+GetMember
+Push "text", register2, "cPage"
+GetMember
+Push 1
+Add2
+Push "/"
+Add2
+Push register2, "totalPage"
+GetMember
+Add2
+SetMember
+Push register2, "loading", false
+SetMember
+}
+SetMember
+Push 0.0, "loadActionList"
+CallFunction
+Pop
+}
+DefineFunction2 "clearStage", 0, 2, false, true, true, false, true, false, true, false, false {
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "gameSet"
+CallMethod
+Pop
+Push 1, 1, register1, "game"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "clearStage"
+CallMethod
+Pop
+Push 0.0, register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "clearData"
+CallMethod
+Pop
+}
+DefineFunction2 "loadCommentHeader", 0, 4, false, true, true, false, true, false, false, true, false {
+DefineFunction2 "loadCommentListHeader", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push register2, "snum", register1, "comment_snum"
+GetMember
+SetMember
+Push "POST", "result_lv"
+GetVariable
+Push "loadCommentListHeader.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push "result_lv", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register2, "commentTotalCount", register1, "total"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "ReadComments"
+GetMember
+Push "_width", 155
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "ReadComments"
+GetMember
+Push "text", "(", register2, "commentTotalCount"
+GetMember
+Add2
+Push ")"
+Add2
+SetMember
+}
+SetMember
+Push 0.0, "loadCommentListHeader"
+CallFunction
+Pop
+}
+DefineFunction2 "loadComment", 1, 8, false, true, true, false, true, false, false, true, false, 0, "page" {
+DefineFunction2 "loadCommentList", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0.0, "LoadVars"
+NewObject
+StoreRegister 2
+Pop
+Push register2, "action_id", register1, "action_id"
+GetMember
+SetMember
+Push register2, "snum", register1, "comment_snum"
+GetMember
+SetMember
+Push "POST", "result_lv"
+GetVariable
+Push "loadCommentList.php", 3, register2, "sendAndLoad"
+CallMethod
+Pop
+}
+Push register2, "commentPage", "page"
+GetVariable
+SetMember
+Push register2, "comment_snum", "page"
+GetVariable
+Push 1
+Subtract
+Push register2, "show_comment_num"
+GetMember
+Multiply
+SetMember
+Push "result_lv", 0.0, "LoadVars"
+NewObject
+DefineLocal
+Push "result_lv"
+GetVariable
+Push "onLoad"
+DefineFunction2 "", 0, 7, false, true, true, false, true, false, false, true, false {
+Push register1, "count"
+GetMember
+StoreRegister 6
+Pop
+Push register2, "commentTotalCount", register1, "total"
+GetMember
+SetMember
+Push register2, "show_comment_count", register6
+SetMember
+Push ""
+StoreRegister 4
+Pop
+Push ""
+StoreRegister 5
+Pop
+Push register4, "----------------------------------------------------------\n"
+Add2
+StoreRegister 4
+Pop
+Push register6, 0.0
+Equals2
+Not
+If loc1809
+Push register4, "                                         no comment\n"
+Add2
+StoreRegister 4
+Pop
+Push register4, "----------------------------------------------------------\n"
+Add2
+StoreRegister 4
+Pop
+loc1809:Push 0.0
+StoreRegister 3
+Pop
+loc181a:Push register3, register6
+Less2
+Not
+If loc18d6
+Push ""
+StoreRegister 5
+Pop
+Push register1, "create", register3
+Add2
+GetMember
+Push ""
+Equals2
+Not
+Not
+If loc185a
+Push register1, "create", register3
+Add2
+GetMember
+StoreRegister 5
+Pop
+loc185a:Push register4, "<font size=\"16\">name:", register1, "name", register3
+Add2
+GetMember
+Add2
+Push " "
+Add2
+Push register5
+Add2
+Push "</font>\n"
+Add2
+Add2
+StoreRegister 4
+Pop
+Push register4, register1, "comment", register3
+Add2
+GetMember
+Push "\n"
+Add2
+Add2
+StoreRegister 4
+Pop
+Push register4, "----------------------------------------------------------\n"
+Add2
+StoreRegister 4
+Pop
+Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc181a
+loc18d6:Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "comments"
+GetMember
+Push "htmlText", register4
+SetMember
+Push register2, "commentTotalPage", register2, "commentTotalCount"
+GetMember
+Push register2, "show_comment_num"
+GetMember
+Divide
+Push 1, "Math"
+GetVariable
+Push "ceil"
+CallMethod
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "totalPage"
+GetMember
+Push "text", register2, "commentTotalCount"
+GetMember
+Push " Comments"
+Add2
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "pageNo"
+GetMember
+Push "text", "page"
+GetVariable
+Push " / "
+Add2
+Push register2, "commentTotalPage"
+GetMember
+Add2
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "ReadComments"
+GetMember
+Push "text", "(", register2, "commentTotalCount"
+GetMember
+Add2
+Push ")"
+Add2
+SetMember
+}
+SetMember
+Push 0.0, "loadCommentList"
+CallFunction
+Pop
+}
+DefineFunction2 "loadMap", 1, 3, false, true, true, false, true, false, true, false, false, 2, "no" {
+Push register1, "rankingAccept", false
+SetMember
+Push register1, "recommended", false
+SetMember
+Push register1, "game"
+GetMember
+Push "time"
+GetMember
+Push "text", ""
+SetMember
+Push register1, "game"
+GetMember
+Push "time2"
+GetMember
+Push "text", ""
+SetMember
+Push register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "comments"
+GetMember
+Push "text", ""
+SetMember
+Push register1, "loading", true
+SetMember
+Push 0.0, "clearStage"
+CallFunction
+Pop
+Push register1, "action_id", register2
+SetMember
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "gameSet"
+CallMethod
+Pop
+Push 1, 1, register1, "game"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "makeStage"
+CallMethod
+Pop
+Push 0.0, "loadCommentHeader"
+CallFunction
+Pop
+}
+DefineFunction2 "initCurrentMap", 0, 2, false, true, true, false, true, false, true, false, false {
+Push register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "_visible", true
+SetMember
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "gameSet"
+CallMethod
+Pop
+Push 1, 1, register1, "game"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+}
+DefineFunction2 "changeToPlayMode", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register2, "game"
+GetMember
+Push "time"
+GetMember
+Push "text", ""
+SetMember
+Push register2, "game"
+GetMember
+Push "time2"
+GetMember
+Push "text", ""
+SetMember
+Push register1, "createBtn"
+GetMember
+Push "label", "Create New Stage"
+SetMember
+Push register2, "action_id", -1
+SetMember
+Push 0.0, register2, "clearStage"
+CallMethod
+Pop
+Push register2, "edit_panel"
+GetMember
+Push "stop", false
+SetMember
+Push register1, "game"
+GetMember
+Push "edit", false
+SetMember
+Push 1, 1, register1, "game"
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+Push register1, "edit_panel"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "stageButtonList"
+GetMember
+Push "_visible", true
+SetMember
+Push register1, "edit_login"
+GetMember
+Push "_visible", true
+SetMember
+Push 0.0, "makeStageSelectList"
+CallFunction
+Pop
+}
+DefineFunction2 "changeToEditMode", 1, 4, false, true, true, false, true, false, false, true, false, 3, "newStage" {
+Push true, 1, register2, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "changeShowMode"
+CallMethod
+Pop
+Push register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "player"
+GetMember
+Push "_visible", false
+SetMember
+Push register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "run", false
+SetMember
+Push register2, "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "underConstruction"
+GetMember
+Push "_visible", false
+SetMember
+Push register2, "game"
+GetMember
+Push "time"
+GetMember
+Push "text", ""
+SetMember
+Push register2, "game"
+GetMember
+Push "time2"
+GetMember
+Push "text", ""
+SetMember
+Push register1, "createBtn"
+GetMember
+Push "label", "Back To Play"
+SetMember
+Push register1, "game"
+GetMember
+Push "edit", true
+SetMember
+Push register3
+Not
+If loc1de9
+Push register1, "action_id", -1
+SetMember
+Push register1, "name", ""
+SetMember
+Push register1, "title", ""
+SetMember
+Push register1, "comment", ""
+SetMember
+Push register1, "password", ""
+SetMember
+Push 0.0, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "clearStage"
+CallMethod
+Pop
+Jump loc1e16
+loc1de9:Push register2, "valid"
+GetMember
+Not
+Not
+If loc1e16
+Push 0.0, register2, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "makeStage"
+CallMethod
+Pop
+loc1e16:Push register1, "edit_login"
+GetMember
+Push "_visible", false
+SetMember
+Push 4, 1, register1, "game"
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+Push register1, "edit_panel"
+GetMember
+Push "_visible", true
+SetMember
+Push register1, "stageButtonList"
+GetMember
+Push "_visible", false
+SetMember
+}
+DefineFunction2 "pageUpdate", 0, 3, false, true, true, false, true, false, true, false, false {
+Push register1, "cPage"
+GetMember
+Push "show_stage_num"
+GetVariable
+Multiply
+StoreRegister 2
+Pop
+Push register2, register1, "snum"
+GetMember
+Equals2
+Not
+If loc1e9e
+Push undefined
+Return
+loc1e9e:Push register1, "snum", register2
+SetMember
+Push 0.0, "makeStageSelectList"
+CallFunction
+Pop
+}
+Push "first_id"
+DefineLocal2
+Push "pressed"
+DefineLocal2
+Push "point", 0.0
+DefineLocal
+Push "sortType", 1
+DefineLocal
+Push "action_id", -1
+DefineLocal
+Push "rank", 0.0
+DefineLocal
+Push "name", ""
+DefineLocal
+Push "title", ""
+DefineLocal
+Push "comment", ""
+DefineLocal
+Push "password", ""
+DefineLocal
+Push "valid", 0.0
+DefineLocal
+Push "ranking_name"
+DefineLocal2
+Push "ranking_time"
+DefineLocal2
+Push "dead_num"
+DefineLocal2
+Push "clear_num"
+DefineLocal2
+Push "loading", false
+DefineLocal
+Push "rankingAccept", false
+DefineLocal
+Push "wait"
+DefineLocal2
+Push "dead"
+DefineLocal2
+Push "edit_panel"
+DefineLocal2
+Push "selectedEvaluate", 0.0
+DefineLocal
+Push "cPage", 0.0
+DefineLocal
+Push "snum", -1
+DefineLocal
+Push "commentPage", 1
+DefineLocal
+Push "comment_snum", 0.0
+DefineLocal
+Push "show_comment_count", 0.0
+DefineLocal
+Push "show_comment_num", 7
+DefineLocal
+Push "recommended", false
+DefineLocal
+Push "commentTotalPage", 0.0
+DefineLocal
+Push "commentTotalCount", 0.0
+DefineLocal
+Push "show_stage_num", 13
+DefineLocal
+Push "show_stage_count"
+DefineLocal2
+Push "totalCount", 0.0
+DefineLocal
+Push "totalPage", 0.0
+DefineLocal
+Push "stageList"
+DefineLocal2
+Push "connectingWindow"
+DefineLocal2
+Push "load"
+GetVariable
+Push 1, "onEnterFrame"
+CallFunction
+Pop
+Push "_root"
+GetVariable
+Push "start_id"
+GetMember
+Push 0.0
+Equals2
+Not
+If loc2078
+Push 3, 1, "_root"
+GetVariable
+Push "stageButtonList"
+GetMember
+Push "sort_btn1"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc20aa
+loc2078:Push "_root"
+GetVariable
+Push "stageButtonList"
+GetMember
+Push "stage_id"
+GetMember
+Push "text", "_root"
+GetVariable
+Push "start_id"
+GetMember
+SetMember
+Push "_root"
+GetVariable
+Push "sortType", 7
+SetMember
+loc20aa:Push "_root"
+GetVariable
+Push "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageComment"
+GetMember
+Push "_visible", false
+SetMember
+Push "_root"
+GetVariable
+Push "game"
+GetMember
+Push "gameStart"
+GetMember
+Push "stageData"
+GetMember
+Push "_visible", false
+SetMember
+Push "stageList", "this"
+GetVariable
+Push "show_stage_num"
+GetMember
+Push 1, "Array"
+NewObject
+SetVariable
+Push 0.0, "pageUpdate"
+CallFunction
+Pop
+Push "_root"
+GetVariable
+Push "edit"
+GetMember
+Push 1
+Equals2
+Not
+If loc2148
+Push "this"
+GetVariable
+Push "game"
+GetMember
+Push "edit", true
+SetMember
+Jump loc215c
+loc2148:Push "this"
+GetVariable
+Push "game"
+GetMember
+Push "edit", false
+SetMember
+loc215c:Push 0.0, "this"
+GetVariable
+Push "game"
+GetMember
+Push "init"
+CallMethod
+Pop
+Push "this"
+GetVariable
+Push "edit_panel"
+GetMember
+Push "_visible", false
+SetMember
+Push "_root"
+GetVariable
+Push "start_id"
+GetMember
+Push 0.0
+Greater
+Not
+If loc21c9
+Push "_root"
+GetVariable
+Push "start_id"
+GetMember
+Push 1, "_root"
+GetVariable
+Push "loadMap"
+CallMethod
+Pop
+loc21c9:Push "onEnterFrame"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push "FSCommand:ba-timer", "_root"
+GetVariable
+Push "game"
+GetMember
+Push "time"
+GetMember
+Push "_visible"
+GetMember
+Push "|"
+Add2
+Push "_root"
+GetVariable
+Push "game"
+GetMember
+Push "time"
+GetMember
+Push "text"
+GetMember
+Add2
+GetURL2 false, false, 0
+Push "pressed"
+GetVariable
+Not
+If loc2395
+Push register2, "game"
+GetMember
+Push "edit"
+GetMember
+Not
+If loc2395
+Push "tx", "game"
+GetVariable
+Push "gameStage"
+GetMember
+Push "_xmouse"
+GetMember
+Push register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "square_size"
+GetMember
+Divide
+Push 1, "Math"
+GetVariable
+Push "floor"
+CallMethod
+SetVariable
+Push "ty", "game"
+GetVariable
+Push "gameStage"
+GetMember
+Push "_ymouse"
+GetMember
+Push register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "square_size"
+GetMember
+Divide
+Push 1, "Math"
+GetVariable
+Push "floor"
+CallMethod
+SetVariable
+Push "ty"
+GetVariable
+Push "tx"
+GetVariable
+Push 2, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "deleteBlock"
+CallMethod
+Pop
+Push register1, "palleteNo"
+GetMember
+Push 0.0
+Greater
+Not
+If loc2395
+Push "tx"
+GetVariable
+Push 0.0
+Less2
+Not
+Push "tx"
+GetVariable
+Push register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "xsize"
+GetMember
+Less2
+And
+Push "ty"
+GetVariable
+Push 0.0
+Less2
+Not
+And
+Push "ty"
+GetVariable
+Push register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "ysize"
+GetMember
+Less2
+And
+Not
+If loc2395
+Push "ty"
+GetVariable
+Push "tx"
+GetVariable
+Push register1, "palleteNo"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "gameStage"
+GetMember
+Push "makeBlock"
+CallMethod
+Pop
+}
+loc2395:SetVariable
+Push "this"
+GetVariable
+Push "palleteNo", 1
+SetMember
+Push 2, 1, "this"
+GetVariable
+Push "show_button"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push 1, 1, "this"
+GetVariable
+Push "play_button"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop

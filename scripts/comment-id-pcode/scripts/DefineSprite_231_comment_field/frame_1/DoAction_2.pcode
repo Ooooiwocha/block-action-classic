@@ -1,0 +1,14 @@
+ConstantPool "this", "name", "maxChars", "comment"
+Push "this"
+GetVariable
+Push "name"
+GetMember
+Push "maxChars", 14
+SetMember
+Push "this"
+GetVariable
+Push "comment"
+GetMember
+Push "maxChars", 40
+SetMember
+Stop

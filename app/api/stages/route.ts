@@ -1,0 +1,2 @@
+import {database,ensureDemos,StageRow} from '@/lib/game-db';
+export async function GET(){try{await ensureDemos();const r=await database().prepare('SELECT id,title,name,cells,demo,pickup,pn+retn AS pn,country,(SELECT COUNT(*) FROM comments WHERE stage_id=stages.id) AS comments FROM stages WHERE deleted=0 ORDER BY id DESC LIMIT 100').all<StageRow & {comments:number}>();return Response.json(r.results.map(s=>({...s,cells:JSON.parse(s.cells)})),{headers:{'Cache-Control':'no-store'}});}catch(e){console.error(e);return Response.json({error:'保存先に接続できません。再試行してください。'},{status:503});}}

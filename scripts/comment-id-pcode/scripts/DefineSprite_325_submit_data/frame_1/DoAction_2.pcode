@@ -1,0 +1,71 @@
+ConstantPool "this", "title", "text", "_root", "name", "comment", "password", "release", "selected", "valid", "maxChars"
+Push "this"
+GetVariable
+Push "title"
+GetMember
+Push "text", "_root"
+GetVariable
+Push "title"
+GetMember
+SetMember
+Push "this"
+GetVariable
+Push "name"
+GetMember
+Push "text", "_root"
+GetVariable
+Push "name"
+GetMember
+SetMember
+Push "this"
+GetVariable
+Push "comment"
+GetMember
+Push "text", "_root"
+GetVariable
+Push "comment"
+GetMember
+SetMember
+Push "this"
+GetVariable
+Push "password"
+GetMember
+Push "text", "_root"
+GetVariable
+Push "password"
+GetMember
+SetMember
+Push "this"
+GetVariable
+Push "release"
+GetMember
+Push "selected", "_root"
+GetVariable
+Push "valid"
+GetMember
+SetMember
+Push "this"
+GetVariable
+Push "password"
+GetMember
+Push "maxChars", 16
+SetMember
+Push "this"
+GetVariable
+Push "name"
+GetMember
+Push "maxChars", 14
+SetMember
+Push "this"
+GetVariable
+Push "title"
+GetMember
+Push "maxChars", 16
+SetMember
+Push "this"
+GetVariable
+Push "comment"
+GetMember
+Push "maxChars", 200
+SetMember
+Stop
